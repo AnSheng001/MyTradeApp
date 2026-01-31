@@ -17,16 +17,19 @@ jobs:
       with:
         python-version: "3.10"
 
-    - name: Install system deps
+    - name: Install system dependencies (stable)
       run: |
-        sudo apt update
-        sudo apt install -y \
-          openjdk-17-jdk \
-          unzip zip \
-          libffi-dev \
-          libssl-dev \
-          zlib1g-dev \
-          libncurses5
+       sudo apt-get update
+       sudo apt-get install -y \
+       openjdk-8-jdk \
+       unzip \
+       zip \
+       libffi-dev \
+       libssl-dev \
+       zlib1g-dev \
+       libncurses5 \
+       libstdc++6 \
+       build-essential
 
     - name: Install Buildozer
       run: |
